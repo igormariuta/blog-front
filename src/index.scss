@@ -6,6 +6,14 @@ $body-color: #222;
 $primary: #3766a9;
 $secondary: #d9f5ff;
 
+$container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px,
+  xxl: 720px
+);
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
@@ -16,4 +24,20 @@ body {
 
 .btn {
     font-weight: 500;
+}
+
+.header {
+    height: 58px;
+}
+
+.main {
+    margin-top: 58px;
+}
+
+.sidebar {
+    width: 220px;
+}
+
+.page {
+    width: calc(100% - 220px);
 }
