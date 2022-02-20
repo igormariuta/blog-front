@@ -1,4 +1,4 @@
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import {
   Activity,
   Bookmark,
@@ -7,8 +7,6 @@ import {
   GraphUp,
   List,
   Person,
-  Bug,
-  Search,
   EmojiFrown,
 } from "react-bootstrap-icons";
 import Popular from "../../pages/Popular/Popular";
