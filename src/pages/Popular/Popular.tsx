@@ -1,5 +1,11 @@
+import ArticleList from "../../components/ArticleList/ArticleList";
+
 function Home() {
-  return <div>Популярное</div>;
+  return (
+    <div className="container-sm">
+      <ArticleList />
+    </div>
+  );
 }
 
 export default Home;
