@@ -1,16 +1,12 @@
-import cn from "classnames";
 import {
-  ArrowDown,
   ArrowDownShort,
-  ArrowUp,
   ArrowUpShort,
   Bookmark,
-  CaretDown,
-  CaretUp,
   Chat,
   PersonPlus,
 } from "react-bootstrap-icons";
 import s from "./Article.module.scss";
+import cn from "classnames";
 
 function Article() {
   return (
