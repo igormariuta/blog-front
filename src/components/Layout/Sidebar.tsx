@@ -13,7 +13,7 @@ function Sidebar() {
   return (
     <aside className="p-4 pe-0">
       <ul className="list-unstyled">
-        <li className="mb-2">
+        {/* <li className="mb-2">
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -25,7 +25,7 @@ function Sidebar() {
             <Activity className="me-3" size={16} />
             Популярные
           </NavLink>
-        </li>
+        </li> */}
         <li className="mb-2">
           <NavLink
             className={({ isActive }) =>
@@ -45,12 +45,12 @@ function Sidebar() {
             Закладки
           </NavLink>
         </li>
-        <li className="mb-2">
+        {/* <li className="mb-2">
           <NavLink className="btn d-flex align-items-center" to="/rating">
             <GraphUp className="me-3" size={16} />
             Рейтинг BLG
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink className="btn d-flex align-items-center" to="/subs">
             <Brush className="me-3" size={16} />
