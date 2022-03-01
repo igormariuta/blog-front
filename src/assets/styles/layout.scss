@@ -1,0 +1,36 @@
+.header {
+  height: 58px;
+}
+
+.main {
+  margin-top: 58px;
+}
+
+.sidebar {
+  width: 240px;
+
+  aside {
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 58px;
+  }
+
+  //
+
+  &--hide {
+    width: 0;
+
+    aside {
+      left: -250px;
+    }
+  }
+}
+
+.page {
+  width: calc(100% - 240px);
+
+  &--fullWidth {
+    width: 100%;
+  }
+}

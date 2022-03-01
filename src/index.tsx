@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout";
 
-import "./index.scss";
+import "./assets/styles/index.scss";
 
 ReactDOM.render(
   <BrowserRouter>

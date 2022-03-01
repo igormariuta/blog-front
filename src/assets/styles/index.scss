@@ -3,11 +3,17 @@
 $body-bg: #f2f2f2;
 $body-color: #222;
 $primary: rgb(141, 227, 233);
-// $secondary: #d9f5ff;
-// $info: rgb(141, 227, 233);
 $light: #fff;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+// bootstr
+
+@import "~/node_modules/bootstrap/scss/bootstrap";
+
+// layout
+
+@import "./layout.scss";
+
+// custom
 
 body {
   font-family: "Roboto", sans-serif !important;
@@ -17,27 +23,6 @@ body {
 
 .btn {
   font-weight: 500;
-}
-
-.header {
-  height: 58px;
-}
-
-.main {
-  margin-top: 58px;
-}
-
-.sidebar {
-  width: 240px;
-
-  aside {
-    position: sticky;
-    top: 58px;
-  }
-}
-
-.page {
-  width: calc(100% - 240px);
 }
 
 .container-sm {
@@ -50,10 +35,6 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding: 0;
-}
-
-.bg-primary-gray {
-  background: #b9f1f5;
 }
 
 .fw-500 {
