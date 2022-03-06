@@ -39,24 +39,24 @@ function Sidebar() {
             Свежее
           </NavLink>
         </li>
-        <li className="mb-2">
+        {/* <li className="mb-2">
           <NavLink className="btn d-flex align-items-center" to="/bookmarks">
             <Bookmark className="me-3" size={16} />
             Закладки
           </NavLink>
-        </li>
+        </li> */}
         {/* <li className="mb-2">
           <NavLink className="btn d-flex align-items-center" to="/rating">
             <GraphUp className="me-3" size={16} />
             Рейтинг BLG
           </NavLink>
         </li> */}
-        <li>
+        {/* <li>
           <NavLink className="btn d-flex align-items-center" to="/subs">
             <Brush className="me-3" size={16} />
             Подписки
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </aside>
   );

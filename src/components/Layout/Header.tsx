@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { List, Person } from "react-bootstrap-icons";
 
 import cn from "classnames";
@@ -14,19 +14,24 @@ function Header({ changeSidebarVis }: IProps) {
         <button className="btn p-0 me-4" onClick={() => changeSidebarVis()}>
           <List size={25} />
         </button>
-        <div className="me-4" style={{ fontWeight: "900", fontSize: "30px" }}>
+        <Link
+          to="/"
+          className="text-dark text-decoration-none me-4"
+          style={{ fontWeight: "900", fontSize: "30px", lineHeight: "30px" }}
+        >
           BG
-        </div>
+        </Link>
         <div>
           <input
             className={cn("form-control bg-primary-gray")}
             type="text"
             placeholder="Поиск"
+            disabled
           />
         </div>
       </div>
       <div className="header-user-menu ms-auto">
-        <button className="btn p-1 d-flex align-items-center">
+        <button disabled className="btn p-1 d-flex align-items-center">
           <Person className="me-2" size={20} /> Войти
         </button>
       </div>

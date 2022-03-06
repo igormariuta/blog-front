@@ -11,9 +11,14 @@ import cn from "classnames";
 function Article() {
   return (
     <div className={cn(s.article)}>
-      <div className={cn(s.articleHeader, "p-4 pb-2")}>
+      <div className={"d-flex justify-content-between p-4 pb-2"}>
         <div className="d-flex align-items-center">
-          <a href="/" className={cn(s.articleUser, "me-4 fw-bold text-dark")}>
+          <a
+            href="/"
+            className={
+              "d-flex align-items-center text-decoration-none me-4 fw-bold text-dark"
+            }
+          >
             <span className={s.articleUserAva}></span>
             <span>Игорь Мариуца</span>
           </a>
@@ -35,7 +40,7 @@ function Article() {
       <a href="/" className={cn(s.articleImage, "d-block")}>
         {" "}
       </a>
-      <div className={cn(s.articleFooter, "px-4 py-3")}>
+      <div className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
           <button className="btn p-0 d-flex align-items-center me-4">
             <Chat className="text-secondary me-2" size={16} />

@@ -11,7 +11,6 @@ import { useState } from "react";
 
 function Layout() {
   const [sidebarVis, setSidebarVis] = useState(true);
-
   const changeSidebarVis = () => setSidebarVis((state) => !state);
 
   return (
