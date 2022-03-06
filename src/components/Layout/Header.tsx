@@ -9,7 +9,7 @@ interface IProps {
 
 function Header({ changeSidebarVis }: IProps) {
   return (
-    <header className="header fixed-top d-flex bg-primary align-items-center px-3 py-2">
+    <header className="header fixed-top d-flex bg-primary align-items-center px-4 py-2">
       <div className="header-navigation d-flex align-items-center">
         <button className="btn p-0 me-4" onClick={() => changeSidebarVis()}>
           <List size={25} />

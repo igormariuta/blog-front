@@ -33,7 +33,7 @@ function Sidebar() {
                 ? "btn btn-light d-flex align-items-center"
                 : "btn d-flex align-items-center"
             }
-            to="/new"
+            to="/"
           >
             <Clock className="me-3" size={16} />
             Свежее
