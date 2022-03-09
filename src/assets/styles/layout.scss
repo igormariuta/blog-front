@@ -34,3 +34,16 @@
     width: 100%;
   }
 }
+
+//  article
+
+.article {
+  &UserAva {
+    min-width: 20px;
+    height: 20px;
+  }
+
+  &Image {
+    height: 300px;
+  }
+}

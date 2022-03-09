@@ -1,15 +1,14 @@
 import cn from "classnames";
-import Article from "../Article/Article";
-// import s from "./ArticleList.module.scss";
+import ArticlePreview from "../ArticlePreview/ArticlePreview";
 
 function ArticleList() {
   return (
     <>
       <div className="article-container" style={{ marginBottom: "2rem" }}>
-        <Article />
+        <ArticlePreview />
       </div>
       <div className="article-container" style={{ marginBottom: "2rem" }}>
-        <Article />
+        <ArticlePreview />
       </div>
     </>
   );

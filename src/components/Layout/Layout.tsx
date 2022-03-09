@@ -1,13 +1,14 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import cn from "classnames";
-//
+import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-//
-import Popular from "../../pages/Popular/Popular";
-import New from "../../pages/New/New";
+
+// pages
 import Error404 from "../../pages/Error404/Error";
-import { useState } from "react";
+import New from "../../pages/New/New";
+import Popular from "../../pages/Popular/Popular";
+import Post from "../../pages/Post/Post";
+import User from "../../pages/User/User";
 
 function Layout() {
   const [sidebarVis, setSidebarVis] = useState(true);
@@ -24,6 +25,8 @@ function Layout() {
           <Routes>
             {/* <Route path="/" element={<Popular />} /> */}
             <Route path="/" element={<New />} />
+            <Route path="/p/:post" element={<Post />} />
+            <Route path="/u/:user" element={<User />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </div>

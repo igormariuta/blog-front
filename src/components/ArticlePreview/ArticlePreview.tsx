@@ -6,21 +6,22 @@ import {
   PersonPlus,
 } from "react-bootstrap-icons";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 
-function Article() {
+function ArticlePreview() {
   return (
     <div className="bg-white rounded-2">
       <div className={"d-flex justify-content-between p-4 pb-2"}>
         <div className="d-flex align-items-center">
-          <a
-            href="/"
+          <Link
+            to="u/1"
             className={
               "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
             }
           >
             <span className="articleUserAva d-block rounded-2 bg-secondary me-3"></span>
             <span>Игорь Мариуца</span>
-          </a>
+          </Link>
           <div className="text-secondary">1 час</div>
         </div>
         <div>
@@ -29,14 +30,19 @@ function Article() {
           </button>
         </div>
       </div>
-      <div className="d-block text-decoration-none text-dark px-4 pb-4">
+      <Link
+        to="p/1"
+        className="d-block text-decoration-none text-dark px-4 pb-4"
+      >
         <h2 className="h4 mb-2">
           Разработчики Genshin Impact инвестировали в создание
           экспериментального устройства для термоядерного
         </h2>
         <p className="m-0">Они подверглись атаке хакеров.</p>
-      </div>
-
+      </Link>
+      <Link to="p/1" className="articleImage d-block bg-secondary">
+        {" "}
+      </Link>
       <div className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
           <button className="btn p-0 d-flex align-items-center me-4">
@@ -47,7 +53,7 @@ function Article() {
             <Bookmark className="text-secondary" size={16} />
           </button>
         </div>
-        {/* <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center">
           <button className="btn p-0 d-flex align-items-center me-2">
             <ArrowDownShort className="text-secondary" size={16} />
           </button>
@@ -55,10 +61,10 @@ function Article() {
           <button className="btn p-0 d-flex align-items-center ms-2">
             <ArrowUpShort className="text-secondary" size={16} />
           </button>
-        </div> */}
+        </div>
       </div>
     </div>
   );
 }
 
-export default Article;
+export default ArticlePreview;
