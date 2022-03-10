@@ -30,7 +30,7 @@ function Sidebar() {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "btn btn-light d-flex align-items-center"
+                ? "btn btn-white d-flex align-items-center"
                 : "btn d-flex align-items-center"
             }
             to="/"

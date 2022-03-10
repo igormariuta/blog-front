@@ -10,40 +10,39 @@ import { Link } from "react-router-dom";
 
 function ArticlePreview() {
   return (
-    <div className="bg-white rounded-2">
-      <div className={"d-flex justify-content-between p-4 pb-2"}>
-        <div className="d-flex align-items-center">
-          <Link
-            to="u/1"
-            className={
-              "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
-            }
-          >
-            <span className="articleUserAva d-block rounded-2 bg-secondary me-3"></span>
-            <span>Игорь Мариуца</span>
-          </Link>
-          <div className="text-secondary">1 час</div>
-        </div>
-        <div>
-          <button className="btn p-1 d-flex align-items-center">
+    <div className="container-sm bg-white rounded-2">
+      <header className="p-4">
+        <div className={"d-flex justify-content-between mb-3"}>
+          <div className="d-flex align-items-center">
+            <Link
+              to="u/1"
+              className={
+                "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
+              }
+            >
+              <span className="articleUserAva d-block rounded-2 bg-secondary me-3"></span>
+              <span>Игорь Мариуца</span>
+            </Link>
+            <div className="text-secondary">1 час</div>
+          </div>
+          {/* <button className="btn p-1 d-flex align-items-center">
             <PersonPlus size={16} />
-          </button>
+          </button> */}
         </div>
-      </div>
-      <Link
-        to="p/1"
-        className="d-block text-decoration-none text-dark px-4 pb-4"
-      >
-        <h2 className="h4 mb-2">
-          Разработчики Genshin Impact инвестировали в создание
-          экспериментального устройства для термоядерного
-        </h2>
+        <Link to="p/1" className="d-block text-decoration-none text-dark mb-2">
+          <h2 className="h4">
+            Разработчики Genshin Impact инвестировали в создание
+            экспериментального устройства для термоядерного
+          </h2>
+        </Link>
         <p className="m-0">Они подверглись атаке хакеров.</p>
-      </Link>
-      <Link to="p/1" className="articleImage d-block bg-secondary">
-        {" "}
-      </Link>
-      <div className={"d-flex justify-content-between px-4 py-3"}>
+      </header>
+      <main>
+        <Link to="p/1" className="articleImage d-block bg-secondary">
+          {" "}
+        </Link>
+      </main>
+      <footer className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
           <button className="btn p-0 d-flex align-items-center me-4">
             <Chat className="text-secondary me-2" size={16} />
@@ -62,7 +61,7 @@ function ArticlePreview() {
             <ArrowUpShort className="text-secondary" size={16} />
           </button>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

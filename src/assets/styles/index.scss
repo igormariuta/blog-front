@@ -3,7 +3,7 @@
 $body-bg: #f2f2f2;
 $body-color: #222;
 $primary: rgb(141, 227, 233);
-$light: #fff;
+// $light: #fff;
 
 // bootstr
 
@@ -23,6 +23,12 @@ body {
 
 .btn {
   font-weight: 500;
+}
+
+.btn-white {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .container-sm {

@@ -2,7 +2,7 @@ import ArticleList from "../../components/ArticleList/ArticleList";
 
 function New() {
   return (
-    <div className="container-sm">
+    <div>
       <ArticleList />
     </div>
   );
