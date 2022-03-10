@@ -23,8 +23,8 @@ function Layout() {
         </div>
         <div className={`page p-4 ${sidebarVis ? "" : "page--fullWidth"} `}>
           <Routes>
-            {/* <Route path="/" element={<Popular />} /> */}
             <Route path="/" element={<New />} />
+            <Route path="/popular" element={<Popular />} />
             <Route path="/p/:post" element={<Post />} />
             <Route path="/u/:user" element={<User />} />
             <Route path="*" element={<Error404 />} />
