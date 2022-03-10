@@ -21,14 +21,14 @@ function Header({ changeSidebarVis }: IProps) {
         >
           BG
         </Link>
-        <div>
+        {/* <div>
           <input
             className={cn("form-control bg-primary-gray")}
             type="text"
             placeholder="Поиск"
             disabled
           />
-        </div>
+        </div> */}
       </div>
       <div className="header-user-menu ms-auto">
         <button disabled className="btn p-1 d-flex align-items-center">

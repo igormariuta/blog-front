@@ -18,7 +18,7 @@ function Layout() {
     <>
       <Header changeSidebarVis={changeSidebarVis} />
       <main className="main d-flex">
-        <div className={`sidebar ${sidebarVis ? "" : "sidebar--hide"}`}>
+        <div className={`sidebar ${sidebarVis ? "" : "sidebar--toggle"}`}>
           <Sidebar />
         </div>
         <div className={`page p-4 ${sidebarVis ? "" : "page--fullWidth"} `}>
