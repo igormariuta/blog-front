@@ -7,6 +7,7 @@ import {
   PersonPlus,
 } from "react-bootstrap-icons";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 
 function Article() {
   return (
@@ -37,25 +38,27 @@ function Article() {
       </header>
       <main>
         <div className="bg-secondary" style={{ height: "400px" }}></div>
-        <div className={"d-flex justify-content-between"}>
-          <div className="container-sm p-4 pb-0">
-            <p className="mb-0">
-              Жан Жиро или Мёбиус сделал настолько большой вклад в искусство,
-              что ещё при жизни его называли классиком и даже «папой комиксов»
-              по аналогии с Джеком Кирби («Король комиксов», создал Капитана
-              Америку, Фантастическую четвёрку и Людей Икс). За свою длинную
-              карьеру Жиро нарисовал легендарные графические романы Arzach, The
-              Airtight Garage и Incal, запустил влиятельный журнал Metal Hurlant
-              (в Штатах известен как Heavy Metal), поработал над несбывшейся
-              экранизацией «Дюны», фильмами «Чужой», «Трон» и «Пятый Элемент».
-              Ещё Мёбиус дружил с Хаяо Миядзаки и даже назвал свою дочь в честь
-              одной из его героинь — «Навсикая».
-            </p>
-          </div>
+        <div className="container-sm p-4">
+          <p className="mb-0">
+            Жан Жиро или Мёбиус сделал настолько большой вклад в искусство, что
+            ещё при жизни его называли классиком и даже «папой комиксов» по
+            аналогии с Джеком Кирби («Король комиксов», создал Капитана Америку,
+            Фантастическую четвёрку и Людей Икс). За свою длинную карьеру Жиро
+            нарисовал легендарные графические романы Arzach, The Airtight Garage
+            и Incal, запустил влиятельный журнал Metal Hurlant (в Штатах
+            известен как Heavy Metal), поработал над несбывшейся экранизацией
+            «Дюны», фильмами «Чужой», «Трон» и «Пятый Элемент». Ещё Мёбиус
+            дружил с Хаяо Миядзаки и даже назвал свою дочь в честь одной из его
+            героинь — «Навсикая».
+          </p>
+        </div>
+        <div className="container-sm px-4 mb-4 text-info">
+          <span className="me-2">#tag</span>
+          <span className="me-2">#tagwtf</span>
         </div>
       </main>
-      <footer className="container-sm p-4">
-        <div className={"d-flex justify-content-between mb-5"}>
+      <footer className="container-sm p-4 pt-0">
+        <div className={"d-flex justify-content-between mb-4"}>
           <div className="d-flex align-items-center">
             <button className="btn p-0 d-flex align-items-center me-4">
               <Chat className="text-secondary me-2" size={16} />
@@ -76,14 +79,19 @@ function Article() {
           </div>
         </div>
         {/*  */}
-        <div className="d-flex justify-content-between align-items-center">
-          <div className={"d-flex align-items-center me-4 fw-500 text-dark"}>
+        <div className="d-flex justify-content-between  align-items-center">
+          <Link
+            to="/u/1"
+            className={
+              "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
+            }
+          >
             <span
               className="d-block rounded-2 bg-secondary me-3"
               style={{ minWidth: "35px", height: "35px" }}
             ></span>
             <span>Игорь Мариуца</span>
-          </div>
+          </Link>
           <div>
             <button className="btn btn-light">
               <ChatLeftDots />
