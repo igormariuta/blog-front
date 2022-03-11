@@ -51,3 +51,10 @@ body {
   border: transparent !important;
   transition: background 0.3s ease !important;
 }
+
+a {
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}

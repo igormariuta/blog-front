@@ -1,18 +1,35 @@
+import { useEffect } from "react";
 import useSWR from "swr";
-import ArticleList from "../../components/ArticleList/ArticleList";
+import PostPreview from "../../components/PostPreview/PostPreview";
+import qs from "qs";
 
 const New = () => {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-  const { articles, error } = useSWR(
-    "http://localhost:1337/api/posts",
+  const query = qs.stringify(
+    {
+      populate: ["previewImage", "user.avatar"],
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+
+  const { data: posts, error } = useSWR(
+    `${process.env.REACT_APP_API}/posts?${query}`,
     fetcher
   );
 
+  // useEffect(() => {
+  //   console.log(posts, error);
+  // }, [posts]);
+
   return (
-    <div>
-      <ArticleList />
-    </div>
+    <>
+      {posts?.data.map((post: any) => (
+        <PostPreview key={post.id} className="mb-4" post={post} />
+      ))}
+    </>
   );
 };
 
