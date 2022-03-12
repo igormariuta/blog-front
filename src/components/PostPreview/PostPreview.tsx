@@ -57,7 +57,7 @@ function PostPreview({ post }: any) {
           <img
             className="w-100"
             src={
-              process.env.REACT_APP_IMG +
+              (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
               post.attributes.previewImage.data.attributes.url
             }
             alt={post.attributes.title}
