@@ -9,6 +9,7 @@ const New = () => {
   const query = qs.stringify(
     {
       populate: ["previewImage", "user.avatar"],
+      sort: ["publishedAt:desc", "id"],
     },
     {
       encodeValuesOnly: true,

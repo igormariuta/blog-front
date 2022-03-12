@@ -35,7 +35,7 @@ function PostPreview({ post }: any) {
               <span>{post.attributes.user.data.attributes.fullName}</span>
             </Link>
             <div className="text-secondary">
-              {moment(post.attributes.date, "YYYYMMDD").fromNow()}
+              {moment(post.attributes.publishedAt, "YYYYMMDD").fromNow()}
             </div>
           </div>
           <button disabled className="btn p-1 d-flex align-items-center">
