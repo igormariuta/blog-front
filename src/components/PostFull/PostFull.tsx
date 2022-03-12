@@ -38,7 +38,7 @@ function PostFull({ post }: any) {
               <span>{post.attributes.user.data.attributes.fullName}</span>
             </Link>
             <div className="text-secondary">
-              {moment(post.attributes.publishedAt, "YYYYMMDD").fromNow()}
+              {moment(post.attributes.publishedAt).fromNow()}
             </div>
           </div>
           <div className="text-secondary"></div>
