@@ -25,7 +25,9 @@ function PostPreview({ post }: any) {
                 className="postUserAva d-block rounded-2 bg-light me-3"
                 style={{
                   background: `no-repeat center url(${
-                    process.env.REACT_APP_IMG +
+                    (process.env.REACT_APP_IMG
+                      ? process.env.REACT_APP_IMG
+                      : "") +
                     post.attributes.user.data.attributes.avatar.data.attributes
                       .formats.thumbnail.url
                   })`,

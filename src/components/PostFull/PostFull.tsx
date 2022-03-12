@@ -26,7 +26,9 @@ function PostFull({ post }: any) {
                 className="postUserAva d-block rounded-2 bg-light me-3"
                 style={{
                   background: `no-repeat center url(${
-                    process.env.REACT_APP_IMG +
+                    (process.env.REACT_APP_IMG
+                      ? process.env.REACT_APP_IMG
+                      : "") +
                     post.attributes.user.data.attributes.avatar.data.attributes
                       .formats.thumbnail.url
                   })`,
@@ -52,7 +54,7 @@ function PostFull({ post }: any) {
           <img
             className="w-100"
             src={
-              process.env.REACT_APP_IMG +
+              (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
               post.attributes.previewImage.data.attributes.url
             }
             alt={post.attributes.title}
@@ -114,7 +116,7 @@ function PostFull({ post }: any) {
                 minWidth: "35px",
                 height: "35px",
                 background: `no-repeat center url(${
-                  process.env.REACT_APP_IMG +
+                  (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
                   post.attributes.user.data.attributes.avatar.data.attributes
                     .formats.thumbnail.url
                 })`,
