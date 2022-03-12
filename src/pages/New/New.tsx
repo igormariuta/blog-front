@@ -16,7 +16,7 @@ const New = () => {
   );
 
   const { data: posts, error } = useSWR(
-    `${process.env.REACT_APP_API}/posts?${query}`,
+    `${process.env.REACT_APP_API}/api/posts?${query}`,
     fetcher
   );
 
