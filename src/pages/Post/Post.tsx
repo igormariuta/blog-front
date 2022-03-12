@@ -32,11 +32,7 @@ function Post() {
   //   console.log(error);
   // }, [error]);
 
-  return posts?.data?.length ? (
-    <PostFull className="mb-4" post={posts?.data[0]} />
-  ) : (
-    <></>
-  );
+  return posts?.data?.length ? <PostFull post={posts?.data[0]} /> : <></>;
 
   // return <></>;
 }

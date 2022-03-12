@@ -11,7 +11,7 @@ import moment from "moment";
 
 function PostPreview({ post }: any) {
   return (
-    <div className="container-sm bg-white rounded-2">
+    <div className="container-sm bg-white rounded-2 mb-4">
       <header className="p-4">
         <div className={"d-flex justify-content-between mb-3"}>
           <div className="d-flex align-items-center">
@@ -77,7 +77,9 @@ function PostPreview({ post }: any) {
           <button disabled className="btn p-0 d-flex align-items-center me-2">
             <ArrowDownShort className="text-secondary" size={16} />
           </button>
-          <span className="text-secondary fw-500">12</span>
+          <span className="text-secondary fw-500">
+            {post.attributes.rating}
+          </span>
           <button disabled className="btn p-0 d-flex align-items-center ms-2">
             <ArrowUpShort className="text-secondary" size={16} />
           </button>

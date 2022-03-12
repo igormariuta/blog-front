@@ -27,7 +27,7 @@ const New = () => {
   return (
     <>
       {posts?.data.map((post: any) => (
-        <PostPreview key={post.id} className="mb-4" post={post} />
+        <PostPreview key={post.id} post={post} />
       ))}
     </>
   );
