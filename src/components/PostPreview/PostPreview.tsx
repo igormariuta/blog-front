@@ -58,7 +58,8 @@ function PostPreview({ post }: any) {
             className="w-100"
             src={
               (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
-              post.attributes.previewImage.data.attributes.url
+                post.attributes.previewImage.data.attributes.formats.medium
+                  .url ?? post.attributes.previewImage.data.attributes.url
             }
             alt={post.attributes.title}
             loading="lazy"
