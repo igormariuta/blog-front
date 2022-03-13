@@ -136,7 +136,7 @@ function PostFull({ post }: any) {
               <ChatLeftDots />
             </button>
             <button disabled className="btn btn-primary ms-3">
-              Подписаться
+              Follow
             </button>
           </div>
         </div>

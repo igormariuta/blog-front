@@ -67,7 +67,10 @@ function Comments({ comments }: any) {
 const Comment = ({ comment }: any) => (
   <div className="comment-mb-4">
     <header className="d-flex align-items-center justify-content-between mb-2">
-      <div className="d-flex align-items-center">
+      <Link
+        to={`/u/${comment.attributes.user.data.attributes.username}`}
+        className="d-flex align-items-center text-dark text-decoration-none"
+      >
         <div
           className="avatar bg-light rounded-2 me-3"
           style={{
@@ -82,14 +85,14 @@ const Comment = ({ comment }: any) => (
           }}
         ></div>
         <div className="d-flex flex-column">
-          <p className="mb-0 fw-500">
+          <div className="mb-0 fw-500">
             <small>{comment.attributes.user.data.attributes.fullName}</small>
-          </p>
+          </div>
           <small className="text-secondary">
             {moment(comment.attributes.createdAt).fromNow()}
           </small>
         </div>
-      </div>
+      </Link>
       <div className="d-flex align-items-center">
         <button disabled className="btn p-0 d-flex align-items-center me-3">
           <ArrowDownShort className="text-secondary" size={16} />
