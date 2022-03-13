@@ -1,15 +1,8 @@
-import {
-  ArrowDownShort,
-  ArrowUpShort,
-  Bookmark,
-  Chat,
-  ChatLeftDots,
-  PersonPlus,
-} from "react-bootstrap-icons";
-import cn from "classnames";
+import { ArrowDownShort, ArrowUpShort } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 function Comments({ comments }: any) {
   const [sortedComments, setSortedComments] = useState([]);
@@ -25,17 +18,16 @@ function Comments({ comments }: any) {
             : 0
         )
       );
-
-      console.log(comments, sortedComments);
+      console.log(comments);
     }
   }, [comments]);
 
   return (
-    <div className="container-md bg-white rounded-2" id="comments">
-      <div className="container-sm p-4 pb-0">
+    <div className="container-md bg-white rounded-2">
+      <div className="container-sm p-4 pb-3">
         <div className="d-flex align-items-center justify-content-between">
           <p className="fw-bold mb-0">{comments.data.length} Comments</p>
-          <div>
+          {/* <div>
             <button
               disabled
               className="btn fw-normal p-0 py-2 me-4 rounded-0 border-0"
@@ -50,7 +42,7 @@ function Comments({ comments }: any) {
             >
               In Order
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -65,7 +57,7 @@ function Comments({ comments }: any) {
 }
 
 const Comment = ({ comment }: any) => (
-  <div className="comment-mb-4">
+  <div className="mb-4-nl">
     <header className="d-flex align-items-center justify-content-between mb-2">
       <Link
         to={`/u/${comment.attributes.user.data.attributes.username}`}
@@ -93,7 +85,7 @@ const Comment = ({ comment }: any) => (
           </small>
         </div>
       </Link>
-      <div className="d-flex align-items-center">
+      {/* <div className="d-flex align-items-center">
         <button disabled className="btn p-0 d-flex align-items-center me-3">
           <ArrowDownShort className="text-secondary" size={16} />
         </button>
@@ -103,9 +95,11 @@ const Comment = ({ comment }: any) => (
         <button disabled className="btn p-0 d-flex align-items-center ms-3">
           <ArrowUpShort className="text-secondary" size={16} />
         </button>
-      </div>
+      </div> */}
     </header>
-    <main>{comment.attributes.body}</main>
+    <main>
+      <ReactMarkdown>{comment.attributes.body}</ReactMarkdown>
+    </main>
   </div>
 );
 

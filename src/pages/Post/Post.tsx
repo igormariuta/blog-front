@@ -39,19 +39,22 @@ function Post() {
   //   console.log(error);
   // }, [error]);
 
-  return (
-    <>
-      {!posts ? <p>loading</p> : <></>}
-      {posts?.data?.length ? (
+  const render = () => {
+    if (posts) {
+      return posts.data?.length ? (
         <>
           <PostFull post={posts.data[0]} />
           <Comments comments={posts.data[0].attributes.comments} />
         </>
       ) : (
         <NotFound />
-      )}
-    </>
-  );
+      );
+    } else {
+      return <div className="loader"></div>;
+    }
+  };
+
+  return render();
 }
 
 export default Post;

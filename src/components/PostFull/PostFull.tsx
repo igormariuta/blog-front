@@ -6,9 +6,10 @@ import {
   ChatLeftDots,
   PersonPlus,
 } from "react-bootstrap-icons";
-import cn from "classnames";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import ReactMarkdown from "react-markdown";
+import { useRef } from "react";
 
 function PostFull({ post }: any) {
   return (
@@ -37,13 +38,15 @@ function PostFull({ post }: any) {
                   height: "20px",
                 }}
               ></span>
-              <span>{post.attributes.user.data.attributes.fullName}</span>
+              <span className="d-flex">
+                {post.attributes.user.data.attributes.fullName}
+              </span>
             </Link>
             <div className="text-secondary">
-              {moment(post.attributes.publishedAt).fromNow()}
+              <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
-          <div className="text-secondary"></div>
+
           {/* <div className="text-secondary">1306 просмотров</div> */}
         </div>
         <div className="d-block text-decoration-none text-dark">
@@ -70,7 +73,7 @@ function PostFull({ post }: any) {
         )}
 
         <div className="container-sm p-4">
-          <p className="mb-0">{post.attributes.body}</p>
+          <ReactMarkdown>{post.attributes.body}</ReactMarkdown>
         </div>
         {post.attributes.tags ? (
           <div className="container-sm px-4 mb-4 ">
@@ -101,7 +104,7 @@ function PostFull({ post }: any) {
               <Bookmark className="text-secondary" size={16} />
             </button>
           </div>
-          <div className="d-flex align-items-center text-secondary">
+          {/* <div className="d-flex align-items-center text-secondary">
             <button disabled className="btn p-0 d-flex align-items-center me-3">
               <ArrowDownShort className="text-secondary" size={16} />
             </button>
@@ -111,9 +114,8 @@ function PostFull({ post }: any) {
             <button disabled className="btn p-0 d-flex align-items-center ms-3">
               <ArrowUpShort className="text-secondary" size={16} />
             </button>
-          </div>
+          </div> */}
         </div>
-        {/*  */}
         <div className="d-flex justify-content-between  align-items-center">
           <Link
             to={`/u/${post.attributes.user.data.attributes.username}`}
@@ -136,7 +138,7 @@ function PostFull({ post }: any) {
             ></span>
             <span>{post.attributes.user.data.attributes.fullName}</span>
           </Link>
-          <div>
+          <div className="d-none d-sm-flex">
             <button disabled className="btn btn-light">
               <ChatLeftDots />
             </button>

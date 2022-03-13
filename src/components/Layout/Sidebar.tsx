@@ -60,8 +60,8 @@ function Sidebar() {
         </li>
       </ul>
       <footer className="mt-auto">
-        <div className="hide-m mb-2">
-          <Link className="text-dark text-decoration-none" to="/about">
+        <div className="hide-m">
+          <Link className="text-secondary text-decoration-none" to="/about">
             <small>About</small>
           </Link>
         </div>
@@ -79,9 +79,13 @@ function Sidebar() {
           </NavLink>
         </div>
 
-        <div className="hide-m d-flex align-items-center">
-          <CalendarEvent className="text-secondary me-2" size={13} />
-          <small className="text-secondary">{moment().format("LL")}</small>
+        <div className="hide-m d-flex flex-column">
+          <div
+            className="my-2 w-100"
+            style={{ height: "1px", background: "#e2e2e2" }}
+          ></div>
+          {/* <CalendarEvent className="text-secondary me-2" size={13} /> */}
+          <small className="text-info">&copy; Копирайт, все дела</small>
         </div>
       </footer>
     </aside>

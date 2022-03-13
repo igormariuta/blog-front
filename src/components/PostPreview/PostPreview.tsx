@@ -6,15 +6,14 @@ import {
   PersonPlus,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-import cn from "classnames";
 import moment from "moment";
 
 function PostPreview({ post }: any) {
   return (
-    <div className="container-sm bg-white rounded-2 mb-4">
+    <div className="container-sm bg-white rounded-2 mb-4-nl">
       <header className="p-4 pb-0">
         <div className={"d-flex justify-content-between mb-3"}>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center just">
             <Link
               to={`/u/${post.attributes.user.data.attributes.username}`}
               className={
@@ -39,12 +38,13 @@ function PostPreview({ post }: any) {
               <span>{post.attributes.user.data.attributes.fullName}</span>
             </Link>
             <div className="text-secondary">
-              {moment(post.attributes.publishedAt).fromNow()}
+              <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
-          <button disabled className="btn p-1 d-flex align-items-center">
+
+          {/* <button disabled className="btn p-1 d-flex align-items-center">
             <PersonPlus size={16} />
-          </button>
+          </button> */}
         </div>
         <Link
           to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
@@ -88,7 +88,7 @@ function PostPreview({ post }: any) {
             <Bookmark className="text-secondary" size={16} />
           </button>
         </div>
-        <div className="d-flex align-items-center">
+        {/* <div className="d-flex align-items-center">
           <button disabled className="btn p-0 d-flex align-items-center me-3">
             <ArrowDownShort className="text-secondary" size={16} />
           </button>
@@ -98,7 +98,7 @@ function PostPreview({ post }: any) {
           <button disabled className="btn p-0 d-flex align-items-center ms-3">
             <ArrowUpShort className="text-secondary" size={16} />
           </button>
-        </div>
+        </div> */}
       </footer>
     </div>
   );
