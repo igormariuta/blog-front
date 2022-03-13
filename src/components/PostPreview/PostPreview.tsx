@@ -12,7 +12,7 @@ import moment from "moment";
 function PostPreview({ post }: any) {
   return (
     <div className="container-sm bg-white rounded-2 mb-4">
-      <header className="p-4">
+      <header className="p-4 pb-0">
         <div className={"d-flex justify-content-between mb-3"}>
           <div className="d-flex align-items-center">
             <Link
@@ -54,23 +54,28 @@ function PostPreview({ post }: any) {
         </Link>
         <p className="m-0">{post.attributes.description}</p>
       </header>
-      <main>
-        <Link
-          to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
-          className="d-block bg-light"
-        >
-          <img
-            className="w-100"
-            src={
-              (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
-                post.attributes.previewImage.data.attributes.formats.medium
-                  .url ?? post.attributes.previewImage.data.attributes.url
-            }
-            alt={post.attributes.title}
-            loading="lazy"
-          />
-        </Link>
-      </main>
+      {post.attributes.previewImage.data ? (
+        <main className="mt-4">
+          <Link
+            to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
+            className="d-block bg-light"
+          >
+            <img
+              className="w-100"
+              src={
+                (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
+                  post.attributes.previewImage.data.attributes.formats.medium
+                    .url ?? post.attributes.previewImage.data.attributes.url
+              }
+              alt={post.attributes.title}
+              loading="lazy"
+            />
+          </Link>
+        </main>
+      ) : (
+        <></>
+      )}
+
       <footer className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
           <button disabled className="btn p-0 d-flex align-items-center me-4">

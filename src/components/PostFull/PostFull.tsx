@@ -13,7 +13,7 @@ import moment from "moment";
 function PostFull({ post }: any) {
   return (
     <div className="container-md bg-white rounded-2 mb-4">
-      <header className="container-sm p-4">
+      <header className="container-sm p-4 pb-0">
         <div className={"d-flex justify-content-between mb-3"}>
           <div className="d-flex align-items-center">
             <Link
@@ -52,18 +52,23 @@ function PostFull({ post }: any) {
         </div>
       </header>
       <main>
-        <div className="bg-light">
-          <img
-            className="w-100"
-            src={
-              (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
-                post.attributes.previewImage.data.attributes.formats.large
-                  .url ?? post.attributes.previewImage.data.attributes.url
-            }
-            alt={post.attributes.title}
-            loading="lazy"
-          />
-        </div>
+        {post.attributes.previewImage.data ? (
+          <div className="bg-light mt-4">
+            <img
+              className="w-100"
+              src={
+                (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
+                  post.attributes.previewImage.data.attributes.formats.large
+                    .url ?? post.attributes.previewImage.data.attributes.url
+              }
+              alt={post.attributes.title}
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+
         <div className="container-sm p-4">
           <p className="mb-0">{post.attributes.body}</p>
         </div>
