@@ -58,7 +58,7 @@ function PostPreview({ post }: any) {
         <main className="mt-4">
           <Link
             to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
-            className="d-block bg-light"
+            className="d-block bg-light opacity-100"
           >
             <img
               className="w-100"
