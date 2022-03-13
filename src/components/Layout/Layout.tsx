@@ -4,13 +4,13 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 
 // pages
-import Error404 from "../../pages/Error404/Error";
 import New from "../../pages/New/New";
 import Popular from "../../pages/Popular/Popular";
 import Post from "../../pages/Post/Post";
 import User from "../../pages/User/User";
 import Bookmarks from "../../pages/Bookmarks/Bookmarks";
 import Tag from "../../pages/Tag/Tag";
+import NotFound from "../../pages/NotFound/NotFound";
 
 function Layout() {
   const [sidebarVis, setSidebarVis] = useState(true);
@@ -28,10 +28,10 @@ function Layout() {
             <Route path="/" element={<New />} />
             <Route path="/popular" element={<Popular />} />
             <Route path="/bookmarks" element={<Bookmarks />} />
-            <Route path="/p/:slug" element={<Post />} />
-            <Route path="/u/:slug" element={<User />} />
+            <Route path="/u/:slugUser" element={<User />} />
+            <Route path="/u/:slugUser/:slugPost" element={<Post />} />
             <Route path="/tag/:slug" element={<Tag />} />
-            <Route path="*" element={<Error404 />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </main>

@@ -11,7 +11,10 @@ function Header({ changeSidebarVis }: IProps) {
   return (
     <header className="header fixed-top d-flex bg-primary align-items-center px-4 py-2">
       <div className="header-navigation d-flex align-items-center">
-        <button className="btn p-0 me-4" onClick={() => changeSidebarVis()}>
+        <button
+          className="d-none d-lg-block btn p-0 px-2 me-3"
+          onClick={() => changeSidebarVis()}
+        >
           <List size={25} />
         </button>
         <Link
@@ -32,7 +35,7 @@ function Header({ changeSidebarVis }: IProps) {
       </div>
       <div className="header-user-menu ms-auto">
         <button disabled className="btn p-1 d-flex align-items-center">
-          <Person className="me-2" size={20} /> Войти
+          <Person className="me-2" size={20} /> Log In
         </button>
       </div>
     </header>

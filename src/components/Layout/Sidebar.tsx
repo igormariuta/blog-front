@@ -1,18 +1,36 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
 import {
   Activity,
   Bookmark,
   Brush,
+  CalendarDate,
+  CalendarEvent,
   Clock,
+  Envelope,
   GraphUp,
+  InfoCircle,
 } from "react-bootstrap-icons";
 
 import cn from "classnames";
+import moment from "moment";
 
 function Sidebar() {
   return (
-    <aside className="p-4 pe-0">
+    <aside className="d-flex flex-column p-4">
       <ul className="list-unstyled">
+        <li className="mb-2">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-white d-flex align-items-center"
+                : "btn  d-flex align-items-center"
+            }
+            to="/"
+          >
+            <Clock className="me-3" size={16} />
+            <span>New</span>
+          </NavLink>
+        </li>
         <li className="mb-2">
           <NavLink
             className={({ isActive }) =>
@@ -20,45 +38,52 @@ function Sidebar() {
                 ? "btn btn-white d-flex align-items-center"
                 : "btn d-flex align-items-center"
             }
-            to="/"
-          >
-            <Clock className="me-3" size={16} />
-            Свежее
-          </NavLink>
-        </li>
-        <li className="mb-2">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "btn btn-light d-flex align-items-center"
-                : "btn d-flex align-items-center"
-            }
             to="/popular"
           >
             <Activity className="me-3" size={16} />
-            Популярные
+            <span>Popular</span>
           </NavLink>
         </li>
 
         <li className="mb-2">
-          <NavLink className="btn d-flex align-items-center" to="/bookmarks">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-white d-flex align-items-center"
+                : "btn d-flex align-items-center"
+            }
+            to="/bookmarks"
+          >
             <Bookmark className="me-3" size={16} />
-            Закладки
+            <span>Bookmarks</span>
           </NavLink>
         </li>
-        {/* <li className="mb-2">
-          <NavLink className="btn d-flex align-items-center" to="/rating">
-            <GraphUp className="me-3" size={16} />
-            Рейтинг BLG
-          </NavLink>
-        </li> */}
-        {/* <li>
-          <NavLink className="btn d-flex align-items-center" to="/subs">
-            <Brush className="me-3" size={16} />
-            Подписки
-          </NavLink>
-        </li> */}
       </ul>
+      <footer className="mt-auto">
+        <div className="hide-m mb-2">
+          <Link className="text-dark text-decoration-none" to="/about">
+            <small>About</small>
+          </Link>
+        </div>
+
+        <div className="show-m">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-white d-flex align-items-center"
+                : "btn btn-light d-flex align-items-center"
+            }
+            to="/about"
+          >
+            <InfoCircle className="me-3" size={16} />
+          </NavLink>
+        </div>
+
+        <div className="hide-m d-flex align-items-center">
+          <CalendarEvent className="text-secondary me-2" size={13} />
+          <small className="text-secondary">{moment().format("LL")}</small>
+        </div>
+      </footer>
     </aside>
   );
 }

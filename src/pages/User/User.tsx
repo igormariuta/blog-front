@@ -1,5 +1,16 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 function User() {
-  return <div className="container-sm">User</div>;
+  const { slugUser } = useParams();
+
+  // useEffect(() => {}, [user, post]);
+
+  return (
+    <div className="container-sm">
+      <p>user: {slugUser}</p>
+    </div>
+  );
 }
 
 export default User;

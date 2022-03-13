@@ -8,7 +8,7 @@ const New = () => {
 
   const query = qs.stringify(
     {
-      populate: ["previewImage", "user.avatar"],
+      populate: ["previewImage", "user.avatar", "comments"],
       sort: ["publishedAt:desc", "id"],
     },
     {
@@ -21,9 +21,9 @@ const New = () => {
     fetcher
   );
 
-  // useEffect(() => {
-  //   console.log(posts, error);
-  // }, [posts]);
+  useEffect(() => {
+    console.log("/new", posts);
+  }, [posts]);
 
   return (
     <>
