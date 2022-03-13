@@ -18,7 +18,6 @@ function Comments({ comments }: any) {
             : 0
         )
       );
-      console.log(comments);
     }
   }, [comments]);
 
@@ -98,7 +97,9 @@ const Comment = ({ comment }: any) => (
       </div> */}
     </header>
     <main>
-      <ReactMarkdown>{comment.attributes.body}</ReactMarkdown>
+      <ReactMarkdown className="markdown-container">
+        {comment.attributes.body}
+      </ReactMarkdown>
     </main>
   </div>
 );

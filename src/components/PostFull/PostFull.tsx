@@ -72,7 +72,7 @@ function PostFull({ post }: any) {
           <></>
         )}
 
-        <div className="container-sm p-4">
+        <div className="markdown-container container-sm p-4">
           <ReactMarkdown>{post.attributes.body}</ReactMarkdown>
         </div>
         {post.attributes.tags ? (
