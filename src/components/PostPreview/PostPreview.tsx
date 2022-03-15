@@ -41,7 +41,9 @@ function PostPreview({ post }: any) {
               <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
-
+          <div className="text-secondary d-none d-md-block">
+            <small>{post.attributes.viewCount} views</small>
+          </div>
           {/* <button disabled className="btn p-1 d-flex align-items-center">
             <PersonPlus size={16} />
           </button> */}

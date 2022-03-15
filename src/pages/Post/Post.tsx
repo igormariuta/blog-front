@@ -19,9 +19,6 @@ function Post() {
             $eq: slugUser,
           },
         },
-        slug: {
-          $eq: slugPost,
-        },
       },
       populate: ["previewImage", "user.avatar", "comments.user.avatar"],
     },
@@ -30,21 +27,21 @@ function Post() {
     }
   );
 
-  const { data: posts, error } = useSWR(
-    `${process.env.REACT_APP_API}/api/posts?${query}`,
+  const { data: post, error } = useSWR(
+    `${process.env.REACT_APP_API}/api/posts/${slugPost}?${query}`,
     fetcher
   );
 
   // useEffect(() => {
-  //   console.log(error);
-  // }, [error]);
+  //   console.log(post, error);
+  // }, [post]);
 
   const render = () => {
-    if (posts) {
-      return posts.data?.length ? (
+    if (post) {
+      return post.id ? (
         <>
-          <PostFull post={posts.data[0]} />
-          <Comments comments={posts.data[0].attributes.comments} />
+          <PostFull post={post} />
+          <Comments comments={post.attributes.comments} />
         </>
       ) : (
         <NotFound />
@@ -55,6 +52,7 @@ function Post() {
   };
 
   return render();
+  // return <></>;
 }
 
 export default Post;

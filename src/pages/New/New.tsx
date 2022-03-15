@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import useSWR from "swr";
-import PostPreview from "../../components/PostPreview/PostPreview";
 import qs from "qs";
+import { fetcher } from "../../utils/fetcher";
+import PostPreview from "../../components/PostPreview/PostPreview";
 import NotFound from "../NotFound/NotFound";
 
 const New = () => {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
   const query = qs.stringify(
     {
       populate: ["previewImage", "user.avatar", "comments"],

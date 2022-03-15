@@ -46,8 +46,9 @@ function PostFull({ post }: any) {
               <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
-
-          {/* <div className="text-secondary">1306 просмотров</div> */}
+          <div className="text-secondary d-none d-md-block">
+            <small>{post.attributes.viewCount} views</small>
+          </div>
         </div>
         <div className="d-block text-decoration-none text-dark">
           <h1 className="h4 mb-2">{post.attributes.title}</h1>
@@ -71,7 +72,6 @@ function PostFull({ post }: any) {
         ) : (
           <></>
         )}
-
         <div className="markdown-container container-sm p-4">
           <ReactMarkdown>{post.attributes.body}</ReactMarkdown>
         </div>
