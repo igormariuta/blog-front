@@ -81,6 +81,8 @@ h6 {
 }
 
 .markdown-container {
+  overflow: hidden;
+
   > :last-child {
     margin-bottom: 0 !important;
   }
@@ -88,4 +90,8 @@ h6 {
   img {
     max-width: 100%;
   }
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }

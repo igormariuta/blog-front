@@ -4,6 +4,7 @@ import {
   Bookmark,
   Chat,
   ChatLeftDots,
+  Eye,
   PersonPlus,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
@@ -17,7 +18,7 @@ function PostFull({ post }: any) {
     <div className="container-md bg-white rounded-2 mb-4">
       <header className="container-sm p-4 pb-0">
         <div className={"d-flex justify-content-between mb-3"}>
-          <div className="d-flex align-items-center">
+          <div className="d-flex  align-items-start flex-column flex-sm-row align-items-sm-center">
             <Link
               to={`/u/${post.attributes.user.data.attributes.username}`}
               className={
@@ -31,12 +32,9 @@ function PostFull({ post }: any) {
                 {post.attributes.user.data.attributes.fullName}
               </span>
             </Link>
-            <div className="text-secondary">
+            <div className="text-secondary white-space-nowrap">
               <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
-          </div>
-          <div className="text-secondary d-none d-md-block">
-            <small>{post.attributes.viewCount} views</small>
           </div>
         </div>
         <div className="d-block text-decoration-none text-dark">
@@ -83,13 +81,22 @@ function PostFull({ post }: any) {
       <footer className="container-sm p-4 pt-0">
         <div className={"d-flex justify-content-between mb-4"}>
           <div className="d-flex align-items-center">
-            <button disabled className="btn p-0 d-flex align-items-center me-4">
+            <div className="btn p-0 d-flex align-items-center me-4">
+              <Eye className="text-secondary me-2" size={16} />
+              <span className="text-secondary">
+                {post.attributes.viewCount}
+              </span>
+            </div>
+            <div className="btn p-0 d-flex align-items-center me-4">
               <Chat className="text-secondary me-2" size={16} />
               <span className="text-secondary">
                 {post.attributes.comments.data.length}
               </span>
-            </button>
-            <button disabled className="btn p-0 d-flex align-items-center me-4">
+            </div>
+            <button
+              disabled
+              className="btn p-0 d-flex align-items-center me-4 opacity-100"
+            >
               <Bookmark className="text-secondary" size={16} />
             </button>
           </div>
