@@ -79,7 +79,10 @@ function UserFull({ user }: any) {
               boxShadow: "inset 0 -3px 0 0 var(--bs-primary)",
             }}
           >
-            Posts<small className="text-secondary ms-2">10</small>
+            Posts
+            <small className="text-secondary ms-2">
+              {posts?.data?.length ?? 0}
+            </small>
           </button>
           <button
             disabled
@@ -97,24 +100,45 @@ function UserFull({ user }: any) {
             className="sticky"
             style={{ position: "sticky", top: "calc(58px + 1.5rem)" }}
           >
-            <div className="bg-white rounded-2 p-4 mb-4">
-              <div className=" mb-4">
-                <span className="fw-500">Followers</span>
-                <small className="text-secondary ms-2">
-                  {user.followers?.length}
-                </small>
+            {user.followers?.length ? (
+              <div className="bg-white rounded-2 p-4 mb-4">
+                <div>
+                  <span className="fw-500">Followers</span>
+                  <small className="text-secondary ms-2">
+                    {user.followers?.length}
+                  </small>
+                </div>
+                <div></div>
               </div>
-            </div>
+            ) : (
+              <></>
+            )}
+
+            {user.following?.length ? (
+              <div
+                className="bg-white rounded-2 p-4 mb-4"
+                style={{ position: "sticky", top: "calc(58px + 1.5rem)" }}
+              >
+                <div>
+                  <span className="fw-500">Following</span>
+                  <small className="text-secondary ms-2">
+                    {user.following?.length}
+                  </small>
+                </div>
+                <div></div>
+              </div>
+            ) : (
+              <></>
+            )}
+
             <div
-              className="bg-white rounded-2 p-4"
+              className="bg-white rounded-2 p-4 mb-4"
               style={{ position: "sticky", top: "calc(58px + 1.5rem)" }}
             >
-              <div className=" mb-4">
-                <span className="fw-500">Following</span>
-                <small className="text-secondary ms-2">
-                  {user.following?.length}
-                </small>
+              <div>
+                <span className="fw-500">Contacts</span>
               </div>
+              <div></div>
             </div>
           </div>
         </aside>
