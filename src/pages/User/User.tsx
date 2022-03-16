@@ -3,43 +3,26 @@ import useSWR from "swr";
 import qs from "qs";
 import { fetcher } from "../../utils/fetcher";
 import { useEffect } from "react";
+import NotFound from "../NotFound/NotFound";
+import UserFull from "../../components/UserFull/UserFull";
 
 function User() {
   const { slugUser } = useParams();
 
-  const query = qs.stringify(
-    {
-      filters: {
-        // user: {
-        //   username: {
-        //     $eq: slugUser,
-        //   },
-        // },
-        userName: {
-          $eq: slugUser,
-        },
-      },
-      populate: ["avatar", "comments"],
-    },
-    {
-      encodeValuesOnly: true,
-    }
-  );
-
-  const { data: user, error } = useSWR(
-    `${process.env.REACT_APP_API}/api/users?${query}`,
+  const { data: user } = useSWR(
+    `${process.env.REACT_APP_API}/api/users/${slugUser}`,
     fetcher
   );
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  const render = () => {
+    if (user) {
+      return user.id ? <UserFull user={user} /> : <NotFound />;
+    } else {
+      return <div className="loader"></div>;
+    }
+  };
 
-  return (
-    <div className="container-sm">
-      <p>user: {slugUser}</p>
-    </div>
-  );
+  return render();
 }
 
 export default User;

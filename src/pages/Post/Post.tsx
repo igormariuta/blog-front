@@ -5,10 +5,9 @@ import qs from "qs";
 import { useParams } from "react-router-dom";
 import NotFound from "../NotFound/NotFound";
 import Comments from "../../components/Comments/Comments";
+import { fetcher } from "../../utils/fetcher";
 
 function Post() {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
   const { slugUser, slugPost } = useParams();
 
   const query = qs.stringify(
@@ -40,7 +39,7 @@ function Post() {
     if (post) {
       return post.id ? (
         <>
-          <PostFull post={post} />
+          <PostFull post={post} user={post.attributes.user.data.attributes} />
           <Comments comments={post.attributes.comments} />
         </>
       ) : (

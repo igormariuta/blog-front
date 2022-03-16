@@ -33,16 +33,22 @@ body {
   border-color: #fff;
 }
 
+.container-md {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .container-sm {
   max-width: 720px;
   margin: 0 auto;
   padding: 0;
 }
 
-.container-md {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0;
+.container-md-to-sm {
+  @media (max-width: 991px) {
+    max-width: 720px;
+  }
 }
 
 .fw-500 {

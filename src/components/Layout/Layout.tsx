@@ -30,7 +30,7 @@ function Layout() {
             <Route path="/bookmarks" element={<Bookmarks />} />
             <Route path="/u/:slugUser" element={<User />} />
             <Route path="/u/:slugUser/:slugPost" element={<Post />} />
-            <Route path="/tag/:slug" element={<Tag />} />
+            <Route path="/tag/:slugTag" element={<Tag />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -11,12 +11,12 @@ function Header({ changeSidebarVis }: IProps) {
   return (
     <header className="header fixed-top d-flex bg-primary align-items-center px-4 py-2">
       <div className="header-navigation d-flex align-items-center">
-        <button
+        {/* <button
           className="d-none d-lg-block btn p-0 px-2 me-3"
           onClick={() => changeSidebarVis()}
         >
           <List size={25} />
-        </button>
+        </button> */}
         <Link
           to="/"
           className="text-dark text-decoration-none me-4"

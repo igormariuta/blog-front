@@ -10,46 +10,49 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import UserAvatar from "../UserAvatar/UserAvatar";
 
-function PostPreview({ post }: any) {
+function PostPreview({ post, user }: any) {
   return (
     <div className="container-sm bg-white rounded-2 mb-4-nl">
       <header className="p-4 pb-0">
-        <div className={"d-flex justify-content-between mb-3"}>
-          <div className="d-flex align-items-start flex-column flex-sm-row align-items-sm-center">
+        <div
+          className={"d-flex align-items-center justify-content-between mb-3"}
+        >
+          <div className="d-flex align-items-start flex-column flex-sm-row align-items-sm-center overflow-hidden">
             <Link
-              to={`/u/${post.attributes.user.data.attributes.username}`}
+              to={`/u/${user.username}`}
               className={
                 "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
               }
             >
-              <UserAvatar
-                avatar={post.attributes.user.data.attributes.avatar}
-              />
-              <span>{post.attributes.user.data.attributes.fullName}</span>
+              <UserAvatar avatar={user.avatar.data?.attributes} />
+              <span>{user.fullName}</span>
             </Link>
             <div className="text-secondary whitespace-nowrap">
               <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
-          {/* <div className="text-secondary d-none d-md-block">
-            <small>{post.attributes.viewCount} views</small>
-          </div> */}
           {/* <button disabled className="btn p-1 d-flex align-items-center">
             <PersonPlus size={16} />
           </button> */}
         </div>
         <Link
-          to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
-          className="d-block text-decoration-none text-dark mb-2"
+          to={`/u/${user.username}/${post.attributes.slug}`}
+          className="d-block text-decoration-none text-dark"
         >
-          <h2 className="h4">{post.attributes.title}</h2>
+          <h2 className="h4 overflow-hidden mb-0">{post.attributes.title}</h2>
         </Link>
-        <p className="m-0">{post.attributes.description}</p>
+        {post.attributes.description ? (
+          <p className="mt-2 mb-0 overflow-hidden">
+            {post.attributes.description}
+          </p>
+        ) : (
+          <></>
+        )}
       </header>
       {post.attributes.previewImage.data ? (
         <main className="mt-4">
           <Link
-            to={`/u/${post.attributes.user.data.attributes.username}/${post.attributes.slug}`}
+            to={`/u/${user.username}/${post.attributes.slug}`}
             className="d-block bg-light opacity-100"
           >
             <img
@@ -70,11 +73,11 @@ function PostPreview({ post }: any) {
 
       <footer className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
-          <div className="btn p-0 d-flex align-items-center me-4">
+          <div className="fw-500 p-0 d-flex align-items-center me-4">
             <Eye className="text-secondary me-2" size={16} />
             <span className="text-secondary">{post.attributes.viewCount}</span>
           </div>
-          <div className="btn p-0 d-flex align-items-center me-4">
+          <div className="fw-500 p-0 d-flex align-items-center me-4">
             <Chat className="text-secondary me-2" size={16} />
             <span className="text-secondary">
               {post.attributes.comments.data.length}

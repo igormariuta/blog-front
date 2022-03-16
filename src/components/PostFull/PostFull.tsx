@@ -13,24 +13,22 @@ import ReactMarkdown from "react-markdown";
 import { useRef } from "react";
 import UserAvatar from "../UserAvatar/UserAvatar";
 
-function PostFull({ post }: any) {
+function PostFull({ post, user }: any) {
   return (
     <div className="container-md bg-white rounded-2 mb-4">
       <header className="container-sm p-4 pb-0">
-        <div className={"d-flex justify-content-between mb-3"}>
-          <div className="d-flex  align-items-start flex-column flex-sm-row align-items-sm-center">
+        <div
+          className={"d-flex align-items-center justify-content-between mb-3"}
+        >
+          <div className="d-flex align-items-start flex-column flex-sm-row align-items-sm-center overflow-hidden">
             <Link
-              to={`/u/${post.attributes.user.data.attributes.username}`}
+              to={`/u/${user.username}`}
               className={
                 "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
               }
             >
-              <UserAvatar
-                avatar={post.attributes.user.data.attributes.avatar}
-              />
-              <span className="d-flex">
-                {post.attributes.user.data.attributes.fullName}
-              </span>
+              <UserAvatar avatar={user.avatar.data?.attributes} size={20} />
+              <span className="d-flex">{user.fullName}</span>
             </Link>
             <div className="text-secondary white-space-nowrap">
               <small>{moment(post.attributes.publishedAt).fromNow()}</small>
@@ -38,8 +36,14 @@ function PostFull({ post }: any) {
           </div>
         </div>
         <div className="d-block text-decoration-none text-dark">
-          <h1 className="h4 mb-2">{post.attributes.title}</h1>
-          <p className="m-0">{post.attributes.description}</p>
+          <h1 className="h4 mb-2 overflow-hidden">{post.attributes.title}</h1>
+          {post.attributes.description ? (
+            <p className="mt-2 mb-0 overflow-hidden">
+              {post.attributes.description}
+            </p>
+          ) : (
+            <></>
+          )}
         </div>
       </header>
       <main>
@@ -64,30 +68,37 @@ function PostFull({ post }: any) {
         </div>
         {post.attributes.tags ? (
           <div className="container-sm px-4 mb-4 ">
-            {post.attributes.tags.split(",").map((item: string, i: number) => (
-              <Link
-                key={i}
-                to={`/tag/${item}`}
-                className="me-2 text-decoration-none text-info"
-              >
-                #{item}
-              </Link>
-            ))}
+            {post.attributes.tags
+              .replace(/\s/g, "")
+              .split(",")
+              .map((item: string, i: number) =>
+                item.length ? (
+                  <Link
+                    key={i}
+                    to={`/tag/${item}`}
+                    className="me-2 text-decoration-none text-info"
+                  >
+                    #{item}
+                  </Link>
+                ) : (
+                  ""
+                )
+              )}
           </div>
         ) : (
           <></>
         )}
       </main>
       <footer className="container-sm p-4 pt-0">
-        <div className={"d-flex justify-content-between mb-4"}>
+        <div className={"d-flex justify-content-between"}>
           <div className="d-flex align-items-center">
-            <div className="btn p-0 d-flex align-items-center me-4">
+            <div className="fw-500 p-0 d-flex align-items-center me-4">
               <Eye className="text-secondary me-2" size={16} />
               <span className="text-secondary">
                 {post.attributes.viewCount}
               </span>
             </div>
-            <div className="btn p-0 d-flex align-items-center me-4">
+            <div className="fw-500 p-0 d-flex align-items-center me-4">
               <Chat className="text-secondary me-2" size={16} />
               <span className="text-secondary">
                 {post.attributes.comments.data.length}
@@ -111,28 +122,6 @@ function PostFull({ post }: any) {
               <ArrowUpShort className="text-secondary" size={16} />
             </button>
           </div> */}
-        </div>
-        <div className="d-flex justify-content-between  align-items-center">
-          <Link
-            to={`/u/${post.attributes.user.data.attributes.username}`}
-            className={
-              "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
-            }
-          >
-            <UserAvatar
-              avatar={post.attributes.user.data.attributes.avatar}
-              size={35}
-            />
-            <span>{post.attributes.user.data.attributes.fullName}</span>
-          </Link>
-          <div className="d-none d-sm-flex">
-            <button disabled className="btn btn-light">
-              <ChatLeftDots />
-            </button>
-            <button disabled className="btn btn-primary ms-3">
-              Follow
-            </button>
-          </div>
         </div>
       </footer>
     </div>

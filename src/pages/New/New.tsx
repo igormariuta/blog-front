@@ -1,8 +1,9 @@
 import useSWR from "swr";
 import qs from "qs";
 import { fetcher } from "../../utils/fetcher";
-import PostPreview from "../../components/PostPreview/PostPreview";
+// import PostPreview from "../../components/PostPreview/PostPreview";
 import NotFound from "../NotFound/NotFound";
+import PostsList from "../../components/PostsList/PostsList";
 
 const New = () => {
   const query = qs.stringify(
@@ -20,16 +21,10 @@ const New = () => {
     fetcher
   );
 
-  // useEffect(() => {
-  //   console.log("/new", posts);
-  // }, [posts]);
-
   const render = () => {
     if (posts) {
       return posts.data?.length ? (
-        posts?.data.map((post: any) => (
-          <PostPreview key={post.id} post={post} />
-        ))
+        <PostsList posts={posts.data} />
       ) : (
         <NotFound />
       );

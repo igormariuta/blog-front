@@ -61,10 +61,12 @@ const Comment = ({ comment }: any) => (
     <header className="d-flex align-items-center justify-content-between mb-2">
       <Link
         to={`/u/${comment.attributes.user.data.attributes.username}`}
-        className="d-flex align-items-center text-dark text-decoration-none"
+        className="d-flex align-items-center text-dark text-decoration-none overflow-hidden"
       >
         <UserAvatar
-          avatar={comment.attributes.user.data.attributes.avatar}
+          avatar={
+            comment.attributes.user.data.attributes.avatar.data?.attributes
+          }
           size={35}
         />
         <div className="d-flex flex-column">

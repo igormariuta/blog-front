@@ -21,70 +21,68 @@
     display: none;
   }
 
-  //
+  // ====================================================================
 
-  &--toggle {
-    width: 66px;
+  width: 66px;
 
-    aside {
-      width: 90px;
-      padding: 1.5rem !important;
+  aside {
+    width: 90px;
+    padding: 1.5rem !important;
 
-      svg {
-        margin-right: 0 !important;
+    svg {
+      margin-right: 0 !important;
+    }
+
+    .btn {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+
+      span {
+        display: none;
       }
+    }
 
-      .btn {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
-
-        span {
-          display: none;
-        }
+    footer {
+      .hide-m {
+        display: none !important;
       }
-
-      footer {
-        .hide-m {
-          display: none !important;
-        }
-        .show-m {
-          display: block;
-        }
+      .show-m {
+        display: block;
       }
     }
   }
 
   // responsive
 
-  @media (max-width: 991px) {
-    width: 66px;
+  // @media (max-width: 991px) {
+  //   width: 66px;
 
-    aside {
-      width: 90px;
+  //   aside {
+  //     width: 90px;
 
-      svg {
-        margin-right: 0 !important;
-      }
+  //     svg {
+  //       margin-right: 0 !important;
+  //     }
 
-      .btn {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
+  //     .btn {
+  //       padding-top: 0.6rem;
+  //       padding-bottom: 0.6rem;
 
-        span {
-          display: none;
-        }
-      }
+  //       span {
+  //         display: none;
+  //       }
+  //     }
 
-      footer {
-        .hide-m {
-          display: none !important;
-        }
-        .show-m {
-          display: block;
-        }
-      }
-    }
-  }
+  //     footer {
+  //       .hide-m {
+  //         display: none !important;
+  //       }
+  //       .show-m {
+  //         display: block;
+  //       }
+  //     }
+  //   }
+  // }
 
   @media (max-width: 575px) {
     width: 0;
@@ -100,17 +98,7 @@
 // page
 
 .page {
-  width: calc(100% - 220px);
-
-  &--fullWidth {
-    width: calc(100% - 66px);
-  }
-
-  // responsive
-
-  @media (max-width: 991px) {
-    width: calc(100% - 66px);
-  }
+  width: calc(100% - 66px);
 
   @media (max-width: 575px) {
     width: 100%;
