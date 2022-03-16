@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 function Comments({ comments }: any) {
   const [sortedComments, setSortedComments] = useState([]);
@@ -62,19 +63,10 @@ const Comment = ({ comment }: any) => (
         to={`/u/${comment.attributes.user.data.attributes.username}`}
         className="d-flex align-items-center text-dark text-decoration-none"
       >
-        <div
-          className="avatar bg-light rounded-2 me-3"
-          style={{
-            background: `no-repeat center url(${
-              (process.env.REACT_APP_IMG ?? "") +
-              comment.attributes.user.data.attributes.avatar.data?.attributes
-                .formats.thumbnail.url
-            })`,
-            backgroundSize: "cover",
-            minWidth: "35px",
-            height: "35px",
-          }}
-        ></div>
+        <UserAvatar
+          avatar={comment.attributes.user.data.attributes.avatar}
+          size={35}
+        />
         <div className="d-flex flex-column">
           <div className="mb-0 fw-500">
             <small>{comment.attributes.user.data.attributes.fullName}</small>

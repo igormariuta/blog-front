@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import ReactMarkdown from "react-markdown";
 import { useRef } from "react";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 function PostFull({ post }: any) {
   return (
@@ -23,19 +24,9 @@ function PostFull({ post }: any) {
                 "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
               }
             >
-              <span
-                className="d-block rounded-2 bg-light me-3"
-                style={{
-                  background: `no-repeat center url(${
-                    (process.env.REACT_APP_IMG ?? "") +
-                    post.attributes.user.data.attributes.avatar.data?.attributes
-                      .formats.thumbnail.url
-                  })`,
-                  backgroundSize: "cover",
-                  minWidth: "20px",
-                  height: "20px",
-                }}
-              ></span>
+              <UserAvatar
+                avatar={post.attributes.user.data.attributes.avatar}
+              />
               <span className="d-flex">
                 {post.attributes.user.data.attributes.fullName}
               </span>
@@ -121,19 +112,10 @@ function PostFull({ post }: any) {
               "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
             }
           >
-            <span
-              className="d-block rounded-2 bg-secondary me-3"
-              style={{
-                minWidth: "35px",
-                height: "35px",
-                background: `no-repeat center url(${
-                  (process.env.REACT_APP_IMG ?? "") +
-                  post.attributes.user.data.attributes.avatar.data?.attributes
-                    .formats.thumbnail.url
-                })`,
-                backgroundSize: "cover",
-              }}
-            ></span>
+            <UserAvatar
+              avatar={post.attributes.user.data.attributes.avatar}
+              size={35}
+            />
             <span>{post.attributes.user.data.attributes.fullName}</span>
           </Link>
           <div className="d-none d-sm-flex">

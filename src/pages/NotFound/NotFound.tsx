@@ -23,7 +23,7 @@ function NotFound() {
               }
             >
               <span
-                className="d-block rounded-2 bg-primary me-3"
+                className="d-block rounded-2 bg-light me-3"
                 style={{
                   minWidth: "20px",
                   height: "20px",
@@ -31,7 +31,6 @@ function NotFound() {
               ></span>
               <span className="text-secondary">BG</span>
             </Link>
-            <div className="text-secondary">a second ago</div>
           </div>
         </div>
         <div className="d-block text-decoration-none text-dark mb-2">

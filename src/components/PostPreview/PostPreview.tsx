@@ -7,6 +7,7 @@ import {
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import UserAvatar from "../UserAvatar/UserAvatar";
 
 function PostPreview({ post }: any) {
   return (
@@ -20,25 +21,13 @@ function PostPreview({ post }: any) {
                 "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
               }
             >
-              <span
-                className="d-block rounded-2 bg-light me-3"
-                style={{
-                  background: `no-repeat center url(${
-                    (process.env.REACT_APP_IMG ?? "") +
-                    post.attributes.user.data.attributes.avatar.data?.attributes
-                      .formats.thumbnail.url
-                  })`,
-                  backgroundSize: "cover",
-                  minWidth: "20px",
-                  height: "20px",
-                }}
-              ></span>
+              <UserAvatar
+                avatar={post.attributes.user.data.attributes.avatar}
+              />
               <span>{post.attributes.user.data.attributes.fullName}</span>
             </Link>
             <div className="text-secondary">
-              <small>
-                {moment(post.attributes.publishedAt, moment.ISO_8601).fromNow()}
-              </small>
+              <small>{moment(post.attributes.publishedAt).fromNow()}</small>
             </div>
           </div>
           <div className="text-secondary d-none d-md-block">
