@@ -28,7 +28,7 @@ function PostFull({ post }: any) {
                 style={{
                   background: `no-repeat center url(${
                     (process.env.REACT_APP_IMG ?? "") +
-                    post.attributes.user.data.attributes.avatar.data.attributes
+                    post.attributes.user.data.attributes.avatar.data?.attributes
                       .formats.thumbnail.url
                   })`,
                   backgroundSize: "cover",
@@ -128,7 +128,7 @@ function PostFull({ post }: any) {
                 height: "35px",
                 background: `no-repeat center url(${
                   (process.env.REACT_APP_IMG ?? "") +
-                  post.attributes.user.data.attributes.avatar.data.attributes
+                  post.attributes.user.data.attributes.avatar.data?.attributes
                     .formats.thumbnail.url
                 })`,
                 backgroundSize: "cover",

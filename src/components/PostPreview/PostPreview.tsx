@@ -25,7 +25,7 @@ function PostPreview({ post }: any) {
                 style={{
                   background: `no-repeat center url(${
                     (process.env.REACT_APP_IMG ?? "") +
-                    post.attributes.user.data.attributes.avatar.data.attributes
+                    post.attributes.user.data.attributes.avatar.data?.attributes
                       .formats.thumbnail.url
                   })`,
                   backgroundSize: "cover",
@@ -36,7 +36,9 @@ function PostPreview({ post }: any) {
               <span>{post.attributes.user.data.attributes.fullName}</span>
             </Link>
             <div className="text-secondary">
-              <small>{moment(post.attributes.publishedAt).fromNow()}</small>
+              <small>
+                {moment(post.attributes.publishedAt, moment.ISO_8601).fromNow()}
+              </small>
             </div>
           </div>
           <div className="text-secondary d-none d-md-block">

@@ -67,7 +67,7 @@ const Comment = ({ comment }: any) => (
           style={{
             background: `no-repeat center url(${
               (process.env.REACT_APP_IMG ?? "") +
-              comment.attributes.user.data.attributes.avatar.data.attributes
+              comment.attributes.user.data.attributes.avatar.data?.attributes
                 .formats.thumbnail.url
             })`,
             backgroundSize: "cover",
