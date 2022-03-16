@@ -66,7 +66,7 @@ const Comment = ({ comment }: any) => (
           className="avatar bg-light rounded-2 me-3"
           style={{
             background: `no-repeat center url(${
-              (process.env.REACT_APP_IMG ? process.env.REACT_APP_IMG : "") +
+              (process.env.REACT_APP_IMG ?? "") +
               comment.attributes.user.data.attributes.avatar.data.attributes
                 .formats.thumbnail.url
             })`,
