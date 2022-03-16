@@ -50,7 +50,7 @@ function UserFull({ user }: any) {
         style={{ marginTop: "3rem" }}
       >
         <div className="d-flex justify-content-between">
-          <div className="mb-4" style={{ marginTop: "-4rem" }}>
+          <div className="mb-4" style={{ marginTop: "-4.5rem" }}>
             <UserAvatar borders={true} avatar={user.avatar} size={80} />
           </div>
           <div>

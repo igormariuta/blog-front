@@ -23,7 +23,7 @@ function NotFound() {
               }
             >
               <span
-                className="d-block rounded-2 bg-light me-3"
+                className="d-block rounded-2 bg-primary me-3"
                 style={{
                   minWidth: "20px",
                   height: "20px",
