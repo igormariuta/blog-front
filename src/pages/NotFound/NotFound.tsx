@@ -16,35 +16,18 @@ function NotFound() {
   return (
     <div className="container-sm bg-white rounded-2 mb-4">
       <header className="p-4">
-        <div className={"d-flex justify-content-between mb-3"}>
-          <div className="d-flex align-items-center">
-            <Link
-              to="/"
-              className={
-                "d-flex align-items-center text-decoration-none me-4 fw-500 text-dark"
-              }
-            >
-              <span
-                className="d-block rounded-2 bg-primary me-3"
-                style={{
-                  minWidth: "20px",
-                  height: "20px",
-                }}
-              ></span>
-              <span className="text-secondary">SC</span>
-            </Link>
-          </div>
-        </div>
         <div className="d-block text-decoration-none text-dark mb-2">
-          <h2 className="h4">Not Found</h2>
+          <h2 className="h4 mb-0">Not Found</h2>
         </div>
         <p className="m-0">
-          The resource requested could not be found
-          <EmojiFrown
-            size={14}
-            className="ms-2"
-            style={{ verticalAlign: "baseline" }}
-          />
+          The requested resource is not found{" "}
+          <EmojiFrown size={14} style={{ verticalAlign: "baseline" }} />
+        </p>
+        <p className="mb-0">
+          But don't worry, you can find plenty of other things on our{" "}
+          <Link to="/" className="text-decoration-none text-secondary">
+            homepage
+          </Link>
         </p>
       </header>
       <main>
