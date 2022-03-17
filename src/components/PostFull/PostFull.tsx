@@ -36,7 +36,7 @@ function PostFull({ post, user }: any) {
           </div>
         </div>
         <div className="d-block text-decoration-none text-dark">
-          <h1 className="h4 mb-2 overflow-hidden">{post.attributes.title}</h1>
+          <h1 className="h4 mb-0 overflow-hidden">{post.attributes.title}</h1>
           {post.attributes.description ? (
             <p className="mt-2 mb-0 overflow-hidden">
               {post.attributes.description}
