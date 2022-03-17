@@ -19,10 +19,10 @@ function Header({ changeSidebarVis }: IProps) {
         </button> */}
         <Link
           to="/"
-          className="text-dark text-decoration-none me-4"
+          className="header-logo text-dark text-decoration-none me-4"
           style={{ fontWeight: "900", fontSize: "30px", lineHeight: "30px" }}
         >
-          SC
+          {/* SC */}
         </Link>
         {/* <div>
           <input
