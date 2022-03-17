@@ -22,7 +22,7 @@ function Header({ changeSidebarVis }: IProps) {
           className="text-dark text-decoration-none me-4"
           style={{ fontWeight: "900", fontSize: "30px", lineHeight: "30px" }}
         >
-          BG
+          SC
         </Link>
         {/* <div>
           <input

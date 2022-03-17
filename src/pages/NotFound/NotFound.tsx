@@ -2,9 +2,11 @@ import moment from "moment";
 import {
   ArrowDownShort,
   ArrowUpShort,
+  Bookmark,
   BookmarkFill,
   Chat,
   EmojiFrown,
+  Eye,
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
@@ -29,7 +31,7 @@ function NotFound() {
                   height: "20px",
                 }}
               ></span>
-              <span className="text-secondary">BG</span>
+              <span className="text-secondary">SC</span>
             </Link>
           </div>
         </div>
@@ -52,21 +54,22 @@ function NotFound() {
       </main>
       <footer className={"d-flex justify-content-between px-4 py-3"}>
         <div className="d-flex align-items-center">
-          <button
-            disabled
-            className="btn p-0 d-flex align-items-center me-4 opacity-100"
-          >
+          <div className="fw-500 p-0 d-flex align-items-center me-4">
+            <Eye className="text-secondary me-2" size={16} />
+            <span className="text-secondary">0</span>
+          </div>
+          <div className="fw-500 p-0 d-flex align-items-center me-4">
             <Chat className="text-secondary me-2" size={16} />
             <span className="text-secondary">0</span>
-          </button>
-          <button
-            disabled
-            className="btn p-0 d-flex align-items-center me-4 opacity-100"
-          >
-            <BookmarkFill className="text-primary" size={16} />
-          </button>
+          </div>
+          <div className="fw-500 p-0 d-flex align-items-center me-4 opacity-100">
+            <Bookmark className="text-secondary" size={16} />
+          </div>
         </div>
-        <div className="d-flex align-items-center">
+
+        <div className="d-flex align-items-center"></div>
+
+        {/* <div className="d-flex align-items-center">
           <button
             disabled
             className="btn p-0 d-flex align-items-center me-3 opacity-100"
@@ -80,7 +83,7 @@ function NotFound() {
           >
             <ArrowUpShort className="text-secondary" size={16} />
           </button>
-        </div>
+        </div> */}
       </footer>
     </div>
   );
