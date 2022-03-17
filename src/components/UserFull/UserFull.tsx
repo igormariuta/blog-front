@@ -51,9 +51,9 @@ function UserFull({ user }: any) {
       >
         <div className="d-flex justify-content-between">
           <div className="mb-4" style={{ marginTop: "-4.5rem" }}>
-            <UserAvatar borders={true} avatar={user.avatar} size={80} />
+            <UserAvatar borders={true} avatar={user.avatar} size={95} />
           </div>
-          <div>
+          <div className="mb-2">
             <button disabled className="btn btn-light">
               <ChatLeftDots size={16} />
               <span className="ms-3 d-none d-sm-inline">Message</span>
@@ -94,7 +94,7 @@ function UserFull({ user }: any) {
       </header>
 
       <main className="d-flex justify-content-between">
-        <div>{renderPosts()}</div>
+        <div className="container-sm">{renderPosts()}</div>
         <aside className="ms-4 d-none d-lg-block" style={{ width: "256px" }}>
           <div
             className="sticky"
